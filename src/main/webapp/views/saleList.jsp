@@ -20,10 +20,18 @@
             width: 200px;
             height: 120px;
         }
+        /*#message{*/
+        /*    position: fixed;*/
+        /*    z-index: 1000;*/
+        /*    bottom: 0;*/
+        /*    right: 0;*/
+        /*    left: 0;*/
+        /*    margin-bottom: 0;*/
+        /*}*/
     </style>
 <body>
 <jsp:include page="Menu.jsp"></jsp:include>
-<div class="${mess=="Successful !"?"alert alert-success":(mess==null)?"":"alert alert-danger"}" role="alert">
+<div id="message" class="${mess=="Successful !"?"alert alert-success":(mess==null)?"":"alert alert-danger"}" role="alert">
     <p style="text-align: center; font-size: larger">${mess}</p>
 </div>
 <div class="container">
@@ -75,4 +83,7 @@
     <a href="/home"><button type="button" class="btn btn-primary">Back to home</button></a>
 </div>
 </body>
+<script>
+    $(".alert").fadeTo(2000, 500).fadeOut(1000);
+</script>
 </html>

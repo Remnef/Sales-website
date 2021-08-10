@@ -83,9 +83,8 @@ public class saleControl extends HttpServlet {
         HttpSession session = request.getSession();
         List<saleCard> cardList = (List<saleCard>) session.getAttribute("cardList");
         productDAO dao = new productDAO();
-        boolean check = false;
-        for (saleCard card:cardList) {
-            check = dao.getBill(card);
+        for(saleCard card : cardList) {
+            dao.getBill(card);
         }
         session.removeAttribute("cardList");
         request.setAttribute("mess","Successful !");

@@ -5,19 +5,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Loc's store</title>
+<%--        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
 <%--        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
 <%--        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>--%>
-<%--        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
+<%--        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>--%>
 <%--        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">--%>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="Resoures/css/bootstrap-4.0.0.min.css">
+        <link rel="stylesheet" href="Resoures/css/font awesome.min.css">
+        <script src="Resoures/js/jquery-3.2.1.min.js"></script>
+        <script src="Resoures/bootstrap-4.0.0.min.js"></script>
+        <script src="Resoures/cdn.bootstrap.4.5.3.min.js"></script>
+        <script scr="Resoures/dist/Jquery.validate-1.19.3.min.js"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-    <div class="${mess=="Successful !"?"alert alert-success":(mess==null)?"":"alert alert-danger"}" role="alert">
+    <div id="message" class="${mess=="Successful !"?"alert alert-success":(mess==null)?"":"alert alert-danger"}" role="alert">
         <p style="text-align: center; font-size: larger">${mess}</p>
     </div>
         <jsp:include page="Menu.jsp"></jsp:include>
@@ -97,6 +100,7 @@
             $("#idP").val( ids );
             $('#addCard').modal('show');
         });
+        $(".alert").fadeTo(2000, 500).fadeOut(1000);
     </script>
 </html>
 

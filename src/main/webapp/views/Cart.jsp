@@ -16,11 +16,19 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
     </head>
-
+    <style>
+        /*#message{*/
+        /*    position: fixed;*/
+        /*    z-index: 1000;*/
+        /*    bottom: 0;*/
+        /*    right: 0;*/
+        /*    left: 0;*/
+        /*    margin-bottom: 0;*/
+        /*}*/
+    </style>
     <body>
-    <div class="${mess=="Successful !"?"alert alert-success":(mess==null)?"":"alert alert-danger"}" role="alert">
+    <div id="message" class="${mess=="Successful !"?"alert alert-success":(mess==null)?"":"alert alert-danger"}" role="alert">
         <p style="text-align: center; font-size: larger">${mess}</p>
     </div>
         <jsp:include page="Menu.jsp"></jsp:include>
@@ -175,6 +183,7 @@
             $("#id").val( ids );
             $('#deleteEmployeeModal').modal('show');
         });
+        $(".alert").fadeTo(2000, 500).fadeOut(1000);
         // $(".sale").click(function () {
         //     let ids = $(this).attr('data-id');
         //     let address = $("#address").val();

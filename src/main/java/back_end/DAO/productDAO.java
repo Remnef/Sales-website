@@ -129,16 +129,15 @@ public class productDAO {
     public boolean getBill(saleCard card){
         boolean check = false;
         try{
-            String query="INSERT INTO `sneakers`.`salelist` (`id`, `name`, `price`, `quantity`, `bill`, `time`) VALUES (?, ?, ?, ?, ?,?);";
+            String query="INSERT INTO `salelist` (`name`, `price`, `quantity`, `bill`, `time`) VALUES (?, ?, ?, ?,?);";
             conn = MySQLConnUtils.getConnection();
             String timeStamp = new SimpleDateFormat("HH:mm dd/MM/YYYY").format(new Date());
             ps = conn.prepareStatement(query);
-            ps.setInt(1,card.getId());
-            ps.setString(2,card.getProduct().getName());
-            ps.setFloat(3, (float) card.getPrice());
-            ps.setInt(4,card.getQuantity());
-            ps.setFloat(5,(float) card.getPrice()*card.getQuantity());
-            ps.setString(6,timeStamp);
+            ps.setString(1,card.getProduct().getName());
+            ps.setFloat(2, (float) card.getPrice());
+            ps.setInt(3,card.getQuantity());
+            ps.setFloat(4,(float) card.getPrice()*card.getQuantity());
+            ps.setString(5,timeStamp);
             check = ps.executeUpdate()>0;
         }catch (Exception e){
 
